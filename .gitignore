@@ -1,0 +1,6 @@
+/.claude
+/.vscode
+/init.js
+/node_modules
+/package-lock.json
+/sdk.java.ignore
