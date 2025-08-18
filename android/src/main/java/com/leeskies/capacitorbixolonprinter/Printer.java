@@ -77,7 +77,21 @@ public class Printer {
             int timeout = call.getInt("timeout", 5000);
             this.pendingDiscoveryCall = call;
             this.printer.findNetworkPrinters(timeout);
+            
+            // Add fallback timeout to prevent hanging calls
+            mHandler.postDelayed(() -> {
+                if (pendingDiscoveryCall != null) {
+                    Log.w(TAG, "Discovery timed out, no response from printer");
+                    JSObject response = new JSObject();
+                    response.put("success", true);
+                    response.put("devices", new JSArray());
+                    pendingDiscoveryCall.resolve(response);
+                    pendingDiscoveryCall = null;
+                }
+            }, timeout + 1000); // Add 1 second buffer to SDK timeout
+            
         } catch (Exception e) {
+            this.pendingDiscoveryCall = null; // Clear pending call on exception
             call.reject("Discovery failed: " + e.getMessage());
         }
     }
@@ -141,6 +155,8 @@ public class Printer {
             // Convert alignment string to integer
             int alignmentInt = convertAlignment(alignment);
             
+            // Clear buffer before starting new transaction
+            printer.clearBuffer();
             printer.beginTransactionPrint();
             int result = printer.drawText(
                 text,
@@ -168,10 +184,12 @@ public class Printer {
                     call.reject("Failed to print: error code " + printResult);
                 }
             } else {
+                printer.clearBuffer(); // Clear on failure
                 response.put("success", false);
                 call.reject("Failed to draw text: error code " + result);
             }
         } catch (Exception e) {
+            printer.clearBuffer(); // Clear on exception
             response.put("success", false);
             call.reject("Print text failed: " + e.getMessage());
         }
@@ -179,13 +197,13 @@ public class Printer {
 
     public void printPDF(PluginCall call) {
         String base64FileString = call.getString("base64FileString");
-        int width = call.getInt("width", 576);
+        int width = call.getInt("width", 0);
         int horizontalPosition = call.getInt("horizontalPosition", 0);
         int verticalPosition = call.getInt("verticalPosition", 0);
         int page = call.getInt("page", 1);
         Boolean dithering = call.getBoolean("dithering", true);
         Boolean compress = call.getBoolean("compress", true);
-        int level = call.getInt("level", 0);
+        int level = call.getInt("level", 1);
         
         JSObject response = new JSObject();
         File tempFile = null;
@@ -220,10 +238,13 @@ public class Printer {
             // Create URI from temporary file
             Uri pdfUri = Uri.fromFile(tempFile);
             
-            // Begin transaction for printing
+            // Clear buffer and begin transaction for printing
+            printer.clearBuffer();
             printer.beginTransactionPrint();
             
             // Draw PDF file
+            Log.d(TAG, "Drawing PDF file with parameters: " + pdfUri + ", " + horizontalPosition + ", " + verticalPosition + ", " + page + ", " + width + ", " + level + ", " + dithering + ", " + compress);
+
             int result = printer.drawPDFFile(
                 pdfUri,
                 horizontalPosition,
@@ -234,6 +255,8 @@ public class Printer {
                 dithering,
                 compress
             );
+
+            Log.d(TAG, "drawPDFFile result: " + result);
             
             if (result == 0) {
                 // End transaction and print
@@ -243,17 +266,21 @@ public class Printer {
                     response.put("success", true);
                     call.resolve(response);
                 } else {
+                    printer.clearBuffer(); // Clear on failure
                     response.put("success", false);
                     call.reject("Failed to print PDF: error code " + printResult);
                 }
             } else {
+                printer.clearBuffer(); // Clear on failure
                 response.put("success", false);
                 call.reject("Failed to draw PDF: error code " + result);
             }
         } catch (IOException e) {
+            printer.clearBuffer(); // Clear on exception
             response.put("success", false);
             call.reject("Failed to create temporary PDF file: " + e.getMessage());
         } catch (Exception e) {
+            printer.clearBuffer(); // Clear on exception
             response.put("success", false);
             call.reject("Print PDF failed: " + e.getMessage());
         } finally {
@@ -352,7 +379,8 @@ public class Printer {
                 return;
             }
 
-            // Begin transaction for printing
+            // Clear buffer and begin transaction for printing
+            printer.clearBuffer();
             printer.beginTransactionPrint();
             
             // Convert barcode type string to integer
@@ -384,10 +412,12 @@ public class Printer {
                     call.reject("Failed to print barcode: error code " + printResult);
                 }
             } else {
+                printer.clearBuffer(); // Clear on failure
                 response.put("success", false);
                 call.reject("Failed to draw barcode: error code " + result);
             }
         } catch (Exception e) {
+            printer.clearBuffer(); // Clear on exception
             response.put("success", false);
             call.reject("Print barcode failed: " + e.getMessage());
         }
@@ -433,6 +463,17 @@ public class Printer {
         } catch (Exception e) {
             response.put("success", false);
             call.reject("Connection failed: " + e.getMessage());
+        }
+    }
+
+    public void isInitialized(PluginCall call) {
+        JSObject response = new JSObject();
+        try {
+            boolean initialized = printer != null;
+            response.put("initialized", initialized);
+            call.resolve(response);
+        } catch (Exception e) {
+            call.reject("Failed to check initialization status: " + e.getMessage());
         }
     }
 

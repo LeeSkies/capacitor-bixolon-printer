@@ -58,6 +58,13 @@ export interface PrinterPlugin {
     printPDF(options: PDFOptions): Promise<{
         success: boolean;
     }>;
+    /**
+     * Check if the printer instance is initialized
+     * @returns {Promise<{initialized: boolean}>} A promise that resolves with initialization status
+     */
+    isInitialized(): Promise<{
+        initialized: boolean;
+    }>;
 }
 /** Options for printing text */
 export interface PrintOptions {

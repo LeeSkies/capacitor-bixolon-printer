@@ -46,4 +46,9 @@ export class PrinterWeb extends WebPlugin implements PrinterPlugin {
     console.log('Printer web implementation: printPDF', options);
     return { success: false };
   }
+
+  async isInitialized(): Promise<{ initialized: boolean }> {
+    console.log('Printer web implementation: isInitialized');
+    return { initialized: false };
+  }
 }

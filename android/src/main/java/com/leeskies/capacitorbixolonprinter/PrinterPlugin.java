@@ -92,4 +92,15 @@ public class PrinterPlugin extends Plugin {
         }
         implementation.printPDF(call);
     }
+
+    @PluginMethod
+    public void isInitialized(PluginCall call) {
+        if (implementation == null) {
+            JSObject response = new JSObject();
+            response.put("initialized", false);
+            call.resolve(response);
+            return;
+        }
+        implementation.isInitialized(call);
+    }
 }
