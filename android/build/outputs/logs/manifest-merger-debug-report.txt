@@ -1,0 +1,74 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /home/lee/Documents/work/extents/capacitor-bixolon-printer/android/src/main/AndroidManifest.xml:1:1-26:12
+INJECTED from /home/lee/Documents/work/extents/capacitor-bixolon-printer/android/src/main/AndroidManifest.xml:1:1-26:12
+	package
+		INJECTED from /home/lee/Documents/work/extents/capacitor-bixolon-printer/android/src/main/AndroidManifest.xml
+	xmlns:android
+		ADDED from /home/lee/Documents/work/extents/capacitor-bixolon-printer/android/src/main/AndroidManifest.xml:1:11-69
+uses-permission#android.permission.BLUETOOTH
+ADDED from /home/lee/Documents/work/extents/capacitor-bixolon-printer/android/src/main/AndroidManifest.xml:4:5-68
+	android:name
+		ADDED from /home/lee/Documents/work/extents/capacitor-bixolon-printer/android/src/main/AndroidManifest.xml:4:22-65
+uses-permission#android.permission.BLUETOOTH_ADMIN
+ADDED from /home/lee/Documents/work/extents/capacitor-bixolon-printer/android/src/main/AndroidManifest.xml:5:5-74
+	android:name
+		ADDED from /home/lee/Documents/work/extents/capacitor-bixolon-printer/android/src/main/AndroidManifest.xml:5:22-71
+uses-permission#android.permission.ACCESS_COARSE_LOCATION
+ADDED from /home/lee/Documents/work/extents/capacitor-bixolon-printer/android/src/main/AndroidManifest.xml:6:5-81
+	android:name
+		ADDED from /home/lee/Documents/work/extents/capacitor-bixolon-printer/android/src/main/AndroidManifest.xml:6:22-78
+uses-permission#android.permission.ACCESS_FINE_LOCATION
+ADDED from /home/lee/Documents/work/extents/capacitor-bixolon-printer/android/src/main/AndroidManifest.xml:7:5-79
+	android:name
+		ADDED from /home/lee/Documents/work/extents/capacitor-bixolon-printer/android/src/main/AndroidManifest.xml:7:22-76
+uses-permission#android.permission.BLUETOOTH_SCAN
+ADDED from /home/lee/Documents/work/extents/capacitor-bixolon-printer/android/src/main/AndroidManifest.xml:10:5-73
+	android:name
+		ADDED from /home/lee/Documents/work/extents/capacitor-bixolon-printer/android/src/main/AndroidManifest.xml:10:22-70
+uses-permission#android.permission.BLUETOOTH_CONNECT
+ADDED from /home/lee/Documents/work/extents/capacitor-bixolon-printer/android/src/main/AndroidManifest.xml:11:5-76
+	android:name
+		ADDED from /home/lee/Documents/work/extents/capacitor-bixolon-printer/android/src/main/AndroidManifest.xml:11:22-73
+uses-permission#android.permission.INTERNET
+ADDED from /home/lee/Documents/work/extents/capacitor-bixolon-printer/android/src/main/AndroidManifest.xml:14:5-67
+	android:name
+		ADDED from /home/lee/Documents/work/extents/capacitor-bixolon-printer/android/src/main/AndroidManifest.xml:14:22-64
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from /home/lee/Documents/work/extents/capacitor-bixolon-printer/android/src/main/AndroidManifest.xml:15:5-79
+	android:name
+		ADDED from /home/lee/Documents/work/extents/capacitor-bixolon-printer/android/src/main/AndroidManifest.xml:15:22-76
+uses-permission#android.permission.USB_PERMISSION
+ADDED from /home/lee/Documents/work/extents/capacitor-bixolon-printer/android/src/main/AndroidManifest.xml:18:5-73
+	android:name
+		ADDED from /home/lee/Documents/work/extents/capacitor-bixolon-printer/android/src/main/AndroidManifest.xml:18:22-70
+uses-feature#android.hardware.usb.host
+ADDED from /home/lee/Documents/work/extents/capacitor-bixolon-printer/android/src/main/AndroidManifest.xml:19:5-87
+	android:required
+		ADDED from /home/lee/Documents/work/extents/capacitor-bixolon-printer/android/src/main/AndroidManifest.xml:19:60-84
+	android:name
+		ADDED from /home/lee/Documents/work/extents/capacitor-bixolon-printer/android/src/main/AndroidManifest.xml:19:19-59
+uses-feature#android.hardware.usb.accessory
+ADDED from /home/lee/Documents/work/extents/capacitor-bixolon-printer/android/src/main/AndroidManifest.xml:20:5-92
+	android:required
+		ADDED from /home/lee/Documents/work/extents/capacitor-bixolon-printer/android/src/main/AndroidManifest.xml:20:65-89
+	android:name
+		ADDED from /home/lee/Documents/work/extents/capacitor-bixolon-printer/android/src/main/AndroidManifest.xml:20:19-64
+uses-permission#android.permission.NFC
+ADDED from /home/lee/Documents/work/extents/capacitor-bixolon-printer/android/src/main/AndroidManifest.xml:23:5-62
+	android:name
+		ADDED from /home/lee/Documents/work/extents/capacitor-bixolon-printer/android/src/main/AndroidManifest.xml:23:22-59
+uses-feature#android.hardware.nfc
+ADDED from /home/lee/Documents/work/extents/capacitor-bixolon-printer/android/src/main/AndroidManifest.xml:24:5-82
+	android:required
+		ADDED from /home/lee/Documents/work/extents/capacitor-bixolon-printer/android/src/main/AndroidManifest.xml:24:55-79
+	android:name
+		ADDED from /home/lee/Documents/work/extents/capacitor-bixolon-printer/android/src/main/AndroidManifest.xml:24:19-54
+uses-sdk
+INJECTED from /home/lee/Documents/work/extents/capacitor-bixolon-printer/android/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /home/lee/Documents/work/extents/capacitor-bixolon-printer/android/src/main/AndroidManifest.xml
+INJECTED from /home/lee/Documents/work/extents/capacitor-bixolon-printer/android/src/main/AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from /home/lee/Documents/work/extents/capacitor-bixolon-printer/android/src/main/AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from /home/lee/Documents/work/extents/capacitor-bixolon-printer/android/src/main/AndroidManifest.xml

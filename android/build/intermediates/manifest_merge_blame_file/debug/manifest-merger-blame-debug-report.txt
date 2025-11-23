@@ -1,0 +1,67 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.leeskies.capacitorbixolonprinter" >
+4
+5    <uses-sdk android:minSdkVersion="22" />
+6
+7    <!-- Bluetooth permissions -->
+8    <uses-permission android:name="android.permission.BLUETOOTH" />
+8-->/home/lee/Documents/work/extents/capacitor-bixolon-printer/android/src/main/AndroidManifest.xml:4:5-68
+8-->/home/lee/Documents/work/extents/capacitor-bixolon-printer/android/src/main/AndroidManifest.xml:4:22-65
+9    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+9-->/home/lee/Documents/work/extents/capacitor-bixolon-printer/android/src/main/AndroidManifest.xml:5:5-74
+9-->/home/lee/Documents/work/extents/capacitor-bixolon-printer/android/src/main/AndroidManifest.xml:5:22-71
+10    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+10-->/home/lee/Documents/work/extents/capacitor-bixolon-printer/android/src/main/AndroidManifest.xml:6:5-81
+10-->/home/lee/Documents/work/extents/capacitor-bixolon-printer/android/src/main/AndroidManifest.xml:6:22-78
+11    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+11-->/home/lee/Documents/work/extents/capacitor-bixolon-printer/android/src/main/AndroidManifest.xml:7:5-79
+11-->/home/lee/Documents/work/extents/capacitor-bixolon-printer/android/src/main/AndroidManifest.xml:7:22-76
+12
+13    <!-- For Android 12 and above -->
+14    <uses-permission android:name="android.permission.BLUETOOTH_SCAN" />
+14-->/home/lee/Documents/work/extents/capacitor-bixolon-printer/android/src/main/AndroidManifest.xml:10:5-73
+14-->/home/lee/Documents/work/extents/capacitor-bixolon-printer/android/src/main/AndroidManifest.xml:10:22-70
+15    <uses-permission android:name="android.permission.BLUETOOTH_CONNECT" />
+15-->/home/lee/Documents/work/extents/capacitor-bixolon-printer/android/src/main/AndroidManifest.xml:11:5-76
+15-->/home/lee/Documents/work/extents/capacitor-bixolon-printer/android/src/main/AndroidManifest.xml:11:22-73
+16
+17    <!-- Network/UDP permissions -->
+18    <uses-permission android:name="android.permission.INTERNET" />
+18-->/home/lee/Documents/work/extents/capacitor-bixolon-printer/android/src/main/AndroidManifest.xml:14:5-67
+18-->/home/lee/Documents/work/extents/capacitor-bixolon-printer/android/src/main/AndroidManifest.xml:14:22-64
+19    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+19-->/home/lee/Documents/work/extents/capacitor-bixolon-printer/android/src/main/AndroidManifest.xml:15:5-79
+19-->/home/lee/Documents/work/extents/capacitor-bixolon-printer/android/src/main/AndroidManifest.xml:15:22-76
+20
+21    <!-- USB permissions -->
+22    <uses-permission android:name="android.permission.USB_PERMISSION" />
+22-->/home/lee/Documents/work/extents/capacitor-bixolon-printer/android/src/main/AndroidManifest.xml:18:5-73
+22-->/home/lee/Documents/work/extents/capacitor-bixolon-printer/android/src/main/AndroidManifest.xml:18:22-70
+23
+24    <uses-feature
+24-->/home/lee/Documents/work/extents/capacitor-bixolon-printer/android/src/main/AndroidManifest.xml:19:5-87
+25        android:name="android.hardware.usb.host"
+25-->/home/lee/Documents/work/extents/capacitor-bixolon-printer/android/src/main/AndroidManifest.xml:19:19-59
+26        android:required="false" />
+26-->/home/lee/Documents/work/extents/capacitor-bixolon-printer/android/src/main/AndroidManifest.xml:19:60-84
+27    <uses-feature
+27-->/home/lee/Documents/work/extents/capacitor-bixolon-printer/android/src/main/AndroidManifest.xml:20:5-92
+28        android:name="android.hardware.usb.accessory"
+28-->/home/lee/Documents/work/extents/capacitor-bixolon-printer/android/src/main/AndroidManifest.xml:20:19-64
+29        android:required="false" />
+29-->/home/lee/Documents/work/extents/capacitor-bixolon-printer/android/src/main/AndroidManifest.xml:20:65-89
+30
+31    <!-- NFC permissions -->
+32    <uses-permission android:name="android.permission.NFC" />
+32-->/home/lee/Documents/work/extents/capacitor-bixolon-printer/android/src/main/AndroidManifest.xml:23:5-62
+32-->/home/lee/Documents/work/extents/capacitor-bixolon-printer/android/src/main/AndroidManifest.xml:23:22-59
+33
+34    <uses-feature
+34-->/home/lee/Documents/work/extents/capacitor-bixolon-printer/android/src/main/AndroidManifest.xml:24:5-82
+35        android:name="android.hardware.nfc"
+35-->/home/lee/Documents/work/extents/capacitor-bixolon-printer/android/src/main/AndroidManifest.xml:24:19-54
+36        android:required="false" />
+36-->/home/lee/Documents/work/extents/capacitor-bixolon-printer/android/src/main/AndroidManifest.xml:24:55-79
+37
+38</manifest>
