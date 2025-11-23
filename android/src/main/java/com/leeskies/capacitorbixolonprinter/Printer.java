@@ -282,7 +282,7 @@ public class Printer {
         } catch (Exception e) {
             printer.clearBuffer(); // Clear on exception
             response.put("success", false);
-            call.reject("Print PDF failed: " + e.getMessage());
+            call.reject("Print PprintpdfDF failed: " + e.getMessage());
         } finally {
             // Clean up temporary file
             if (tempFile != null && tempFile.exists()) {
