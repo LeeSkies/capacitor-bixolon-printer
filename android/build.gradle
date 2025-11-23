@@ -45,14 +45,10 @@ android {
 repositories {
     google()
     mavenCentral()
-    maven {
-        url "$projectDir/local-maven"
-    }
 }
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation 'com.bixolon:pdf:1.0.0'
     implementation project(':capacitor-android')
     implementation "androidx.appcompat:appcompat:$androidxAppCompatVersion"
     // Add Bixolon printer SDK dependency here
